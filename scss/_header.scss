@@ -1,0 +1,103 @@
+.header {
+    background-color: $black;
+    padding: 24px 0 26px;
+
+    &__row {
+        margin-bottom: 18px;
+
+        &>.container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            margin-top: 23px;
+            background-color: $yellow;
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    &__logo {
+        &_link {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        &_image {
+            width: 155px;
+            height: 69px;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+
+    & .hamburger {
+        display: none;
+        width: 35px;
+        height: 35px;
+        position: relative;
+        cursor: pointer;
+
+        &:hover .hamburger__middle-part,
+        &:hover .hamburger__middle-part::before,
+        &:hover .hamburger__middle-part::after {
+            background-color: $yellow;
+        }
+
+        &__middle-part {
+            width: inherit;
+            height: 3px;
+            background-color: $white;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+
+
+            &::before,
+            &::after {
+                content: '';
+                display: block;
+                width: inherit;
+                position: absolute;
+                background-color: $white;
+                height: 3px;
+                transition: transform 0.3s ease;
+            }
+
+            &::before {
+                top: -10px;
+            }
+
+            &::after {
+                top: 10px;
+            }
+
+        }
+
+        &_close {
+
+            &:hover .hamburger__middle-part,
+            & .hamburger__middle-part {
+                background-color: transparent;
+
+                &::before {
+                    transform: rotate(45deg);
+                    top: 0;
+                }
+
+                &::after {
+                    transform: rotate(-45deg);
+                    top: 0;
+                }
+            }
+
+        }
+    }
+}
