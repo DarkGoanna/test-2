@@ -1,6 +1,7 @@
-/* hamburger */
 let hamburger = document.querySelector('.hamburger');
 
+
+/* hamburger */
 hamburger.onclick = () => {
     let menu = document.querySelector('.header__menu');
     let body = document.querySelector('body');
@@ -8,12 +9,10 @@ hamburger.onclick = () => {
     menu.classList.toggle('header__menu_open');
     hamburger.classList.toggle('hamburger_close');
     body.classList.toggle('scrollOff');
-
-
 };
 
-/* slider */
-$(document).ready(function(){
+/* слайдер в 2 блоке*/
+$(function(){
     $('.slider').slick({
         centerMode: false,
         infinite: true,
@@ -37,7 +36,7 @@ $(document).ready(function(){
 
           ]
     });
-
+    /* отображает в кнопке prew - номер текущего слайда, а в кнопке next - номер следующего */
     $(".slider").on("afterChange", function(event, slick, currentSlide){
         var allValue = $(".slider").slick("getSlick").slideCount;
         var prev = (currentSlide + 1);
@@ -49,3 +48,41 @@ $(document).ready(function(){
         $('.pagination__next').text('0' + next);
     });
   });
+
+  /* слайдер в 4 блоке */
+$(function(){
+  $('.all-services__slider').slick({
+    centerMode: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    arrows: false,
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      }, 
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      }, 
+      {
+        breakpoint: 580,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+        }
+      }
+
+    ]
+  });
+});
