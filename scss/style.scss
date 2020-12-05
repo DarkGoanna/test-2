@@ -1,11 +1,11 @@
 @import 'resetCSS';
 @import 'fonts';
-@import 'variables';
 @import 'colors';
 @import 'header';
 @import 'services';
 @import 'how-it-work';
 @import 'all-services';
+@import 'screen';
 
 body {
     font-family: 'Jost', sans-serif;
@@ -16,13 +16,13 @@ body {
 }
 
 .container {
-    max-width: 1132px + ($descPadding * 2);
-    padding: 0 $descPadding;
+    max-width: 1200px;
+    padding: 0 30px;
     margin: auto;
 }
 
 /* medium screen (769 to 1100)*/
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .slider {
         height: 336px;
 
@@ -59,6 +59,29 @@ body {
             margin-right: -15px;
         }
     }
+
+    .screen {
+        padding-bottom: 80px;
+
+        &__image-wrapper {
+
+            &::before,
+            &::after {
+                height: 15%;
+                background-size: auto 75%;
+            }
+
+            &::before {
+                top: 20%;
+                background-position: right 20px center;
+            }
+
+            &::after {
+                bottom: 15%;
+                background-position: left 20px center;
+            }
+        }
+    }
 }
 
 /* tublet screen (581 to 768)*/
@@ -68,8 +91,8 @@ body {
     }
 
     .container {
-        max-width: 1132px + ($mobPadding * 2);
-        padding: 0 $mobPadding;
+        max-width: 1152px;
+        padding: 0 10px;
     }
 
     /* заменяем текст на значки */
@@ -239,5 +262,33 @@ body {
     .card {
         max-width: 90%;
         min-height: auto;
+    }
+
+    .all-services {
+        padding-bottom: 0;
+    }
+
+    .screen {
+        padding-bottom: 50px;
+
+        &__image-wrapper {
+            min-width: 90%;
+
+            &::before,
+            &::after {
+                height: 15%;
+                background-size: auto 60%;
+            }
+
+            &::before {
+                top: 20%;
+                background-position: right 3px center;
+            }
+
+            &::after {
+                bottom: 15%;
+                background-position: left 3px center;
+            }
+        }
     }
 }
