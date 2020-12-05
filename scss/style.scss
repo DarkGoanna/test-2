@@ -3,6 +3,7 @@
 @import 'variables';
 @import 'colors';
 @import 'header';
+@import 'services';
 
 body {
     font-family: 'Jost', sans-serif;
@@ -18,77 +19,35 @@ body {
     margin: auto;
 }
 
-.info {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-weight: 500;
+/* medium screen (768 to 1100)*/
+@media (max-width: 1100px) {
+    .slider {
+        height: 336px;
 
-    &__item {
-        display: flex;
-        margin-left: 23px;
-
-        &:first-child {
-            margin-left: 0;
+        &__title {
+            font-size: 22px;
         }
     }
 
-    &__text {
-        margin-right: 5px;
-    }
-
-    &__link {
-        display: inline-block;
-        vertical-align: top;
-        color: $white;
-
-        &:hover {
-            color: $yellow;
-        }
-
-        &_icon {
-            display: none;
-            font-size: 30px;
+    .pagination__prev {
+        &::after {
+            height: 80px;
         }
     }
 }
 
-.menu {
-
-    &__list {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
+/* tublet screen (580 to 768)*/
+@media (max-width: 768px) {
+    .scrollOff {
+        overflow: hidden;
     }
 
-    &__item {
-        margin-left: 34px;
-
-        &:first-child {
-            margin-left: 0;
-        }
-    }
-
-    &__link {
-        display: inline-block;
-        vertical-align: top;
-        font-size: 20px;
-        font-weight: 400;
-        color: $white;
-
-        &:hover {
-            color: $yellow;
-        }
-    }
-}
-
-/* mobile */
-@media (max-width: 767px) {
     .container {
         max-width: 1132px + ($mobPadding * 2);
         padding: 0 $mobPadding;
     }
 
+    /* заменяем текст на значки */
     .info {
         &__item {
             margin-left: 30px;
@@ -129,6 +88,7 @@ body {
             }
         }
 
+        /* вертикальное меню */
         &__menu {
             padding-top: 20px;
             max-width: 250px;
@@ -137,7 +97,7 @@ body {
             position: absolute;
             top: 100%;
             right: -100%;
-            z-index: 10;
+            z-index: 3;
             background-color: $black;
             transition: all 0.3s ease-in-out;
 
@@ -160,9 +120,38 @@ body {
             }
 
             &_open {
-                display: block;
                 right: 0;
+                display: block;
             }
+        }
+    }
+
+    .services {
+        &__about-us {
+            padding: 0 20px;
+            column-gap: 15px;
+        }
+    }
+}
+
+/* mobile screen (0 to 580)*/
+@media (max-width: 580px) {
+
+    .slider {
+        height: auto;
+
+        & .slider__item {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        &__info-wrapper {
+            width: 100%;
+            text-align: center;
+        }
+
+        &__image-wrapper {
+            max-width: 400px;
         }
     }
 }

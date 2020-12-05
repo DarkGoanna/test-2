@@ -11,6 +11,7 @@
             justify-content: space-between;
         }
 
+        /* черта разделитель */
         &::after {
             content: '';
             display: block;
@@ -22,6 +23,7 @@
         }
     }
 
+    /* логотип */
     &__logo {
         &_link {
             display: inline-block;
@@ -36,6 +38,7 @@
         }
     }
 
+    /* мобильная кнопка меню */
     & .hamburger {
         display: none;
         width: 35px;
@@ -81,6 +84,7 @@
 
         }
 
+        /* мобильная кнопка меню (закрыть) */
         &_close {
 
             &:hover .hamburger__middle-part,
@@ -98,6 +102,77 @@
                 }
             }
 
+        }
+    }
+}
+
+/* блок инфо */
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: 500;
+
+    &__item {
+        display: flex;
+        margin-left: 23px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    &__text {
+        margin-right: 5px;
+    }
+
+    &__link {
+        display: inline-block;
+        vertical-align: top;
+        color: $white;
+
+        &:hover {
+            color: $yellow;
+        }
+
+        &_text {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        &_icon {
+            display: none;
+            font-size: 30px;
+        }
+    }
+}
+
+/* навигационное меню */
+.menu {
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__item {
+        margin-left: 34px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 20px;
+        font-weight: 400;
+        color: $white;
+
+        &:hover {
+            color: $yellow;
         }
     }
 }
