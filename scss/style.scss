@@ -4,6 +4,7 @@
 @import 'colors';
 @import 'header';
 @import 'services';
+@import 'how-it-work';
 
 body {
     font-family: 'Jost', sans-serif;
@@ -33,6 +34,12 @@ body {
         &::after {
             height: 80px;
         }
+    }
+
+    .how-it-work {
+        padding: 60px 0;
+        background-image: url(../img/Vector27.svg);
+        background-position: 0 0;
     }
 }
 
@@ -74,6 +81,8 @@ body {
 
         &__row {
             margin: 0;
+            position: relative;
+            z-index: 4;
         }
 
         &__logo {
@@ -94,8 +103,8 @@ body {
             max-width: 250px;
             width: 80%;
             height: 100vh;
-            position: absolute;
-            top: 100%;
+            position: fixed;
+            top: 99px;
             right: -100%;
             z-index: 3;
             background-color: $black;
@@ -121,7 +130,13 @@ body {
 
             &_open {
                 right: 0;
-                display: block;
+                overflow-y: scroll;
+                scrollbar-width: none;
+
+                &::-webkit-scrollbar {
+                    width: 0px;
+                    background: rgba(255, 255, 255, 0.0);
+                }
             }
         }
     }
@@ -131,6 +146,18 @@ body {
             padding: 0 20px;
             column-gap: 15px;
         }
+    }
+
+    .how-it-work {
+        &__title {
+            margin-bottom: 30px;
+        }
+    }
+
+    .demonstration {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-rows: 120px 1fr;
     }
 }
 
@@ -152,6 +179,30 @@ body {
 
         &__image-wrapper {
             max-width: 400px;
+        }
+    }
+
+    .how-it-work {
+        padding: 30px 0;
+    }
+
+    .demonstration {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 10px;
+        grid-auto-flow: dense;
+        grid-template-rows: auto;
+
+        &__item {
+            &:nth-child(odd) {
+                grid-row: auto;
+                justify-self: center;
+            }
+
+            &:nth-child(even) {
+                grid-row: auto;
+                justify-self: center;
+            }
         }
     }
 }
