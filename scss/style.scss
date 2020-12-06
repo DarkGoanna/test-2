@@ -7,12 +7,14 @@
 @import 'all-services';
 @import 'screen';
 @import 'calculator';
+@import 'price-list';
 
 body {
     font-family: 'Jost', sans-serif;
     font-weight: 300;
     font-size: 16px;
     line-height: 1.3;
+    letter-spacing: -0.0075%;
     color: $white;
 }
 
@@ -83,10 +85,17 @@ body {
             }
         }
     }
+
+    .price-list {
+        &__table-wrapper {
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+    }
 }
 
 /* tublet screen (581 to 768)*/
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .scrollOff {
         overflow: hidden;
     }
@@ -259,18 +268,22 @@ body {
         }
 
         &__check {
-            grid-column: 1/-1;
-            grid-row: 5/6;
-            text-align: center;
+            grid-column: 2/-1;
+            grid-row: 4/6;
+            text-align: left;
+
+            &-wrapper {
+                display: block;
+            }
         }
 
         &__textarea {
-            grid-column: 1/-1;
-            grid-row: 6/7;
+            grid-column: 1/2;
+            grid-row: 5/7;
         }
 
         &__submit {
-            grid-column: 2/3;
+            grid-column: 1/2;
             grid-row: 7/8;
             justify-self: center;
         }
@@ -279,7 +292,7 @@ body {
 }
 
 /* mobile screen (0 to 580)*/
-@media (max-width: 580px) {
+@media screen and (max-width: 580px) {
 
     .slider {
         height: auto;
@@ -426,11 +439,6 @@ body {
         &__check {
             grid-column: auto;
             grid-row: auto;
-            text-align: left;
-
-            &-wrapper {
-                display: block;
-            }
         }
 
         &__textarea {
@@ -445,5 +453,32 @@ body {
             justify-self: center;
         }
 
+    }
+
+    .price-list {
+        &__title {
+            font-size: 22px;
+        }
+
+        &__table-wrapper {
+            overflow-x: auto;
+        }
+    }
+
+}
+
+@media screen and (max-width: 580px) and (orientation:portrait) {
+    .price-list {
+        &__inner {
+            padding-top: 300px;
+
+            &::before {
+                display: block;
+            }
+        }
+    }
+
+    .table {
+        display: none;
     }
 }
