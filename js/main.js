@@ -1,6 +1,5 @@
 let hamburger = document.querySelector('.hamburger');
 
-
 /* hamburger */
 hamburger.onclick = () => {
     let menu = document.querySelector('.header__menu');

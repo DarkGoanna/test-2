@@ -354,6 +354,14 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
   grid-template-rows: 120px 1fr; }
+  .demonstration-wrapper {
+    position: relative; }
+  .demonstration__svg {
+    position: absolute;
+    top: 42%;
+    left: 49%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
   .demonstration__item {
     max-width: 144px;
     display: -webkit-box;
@@ -1032,6 +1040,8 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-template-rows: 120px 1fr; }
+    .demonstration__svg {
+      display: none; }
 
   .all-services .slick-slide {
     margin: 0 15px; }
