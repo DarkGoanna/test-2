@@ -8,6 +8,7 @@
 @import 'screen';
 @import 'calculator';
 @import 'price-list';
+@import 'footer';
 
 body {
     font-family: 'Jost', sans-serif;
@@ -24,7 +25,7 @@ body {
     margin: auto;
 }
 
-/* medium screen (769 to 1100)*/
+/* medium screen (769 to 1200)*/
 @media (max-width: 1200px) {
     .slider {
         height: 336px;
@@ -92,6 +93,13 @@ body {
             justify-items: center;
         }
     }
+
+    .footer {
+        &__info {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
 }
 
 /* tublet screen (581 to 768)*/
@@ -126,9 +134,26 @@ body {
         }
     }
 
+    html {
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+            background: rgba(255, 255, 255, 0.0);
+        }
+    }
+
+    body {
+        padding-top: 103px;
+    }
+
     .header {
         padding: 10px 0 0;
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 4;
 
         &__row {
             margin: 0;
@@ -288,6 +313,32 @@ body {
             justify-self: center;
         }
 
+    }
+
+    .footer {
+        & .container {
+            align-items: flex-end;
+        }
+
+        &__item {
+            & .info__text {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            & .info__link {
+                &_text {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+            }
+        }
+
+        &__copyright {
+            &_link {
+                display: block;
+            }
+        }
     }
 }
 
@@ -465,6 +516,21 @@ body {
         }
     }
 
+    .footer {
+        &__info {
+            & .info__text {
+                display: none;
+            }
+        }
+
+        &__logo_image {
+            width: 100px;
+        }
+
+        &__copyright {
+            display: none;
+        }
+    }
 }
 
 @media screen and (max-width: 580px) and (orientation:portrait) {
