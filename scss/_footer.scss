@@ -1,0 +1,41 @@
+.footer {
+    background-color: $yellow;
+    color: $black;
+    padding: 20px 0;
+
+    & .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        &_link {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        &_image {
+            width: 155px;
+            height: 69px;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+
+    &__copyright {
+        font-weight: 500;
+
+        &_link {
+            font-size: 14px;
+            font-weight: 400;
+            color: $black;
+        }
+    }
+
+    &__info {
+        & .info__link {
+            color: $black;
+        }
+    }
+}

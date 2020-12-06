@@ -1,0 +1,82 @@
+.how-it-work {
+    padding: 120px 0 76px;
+    background-color: $black;
+    background-image: url(../img/Vector27.svg), url(../img/decorative-thing.svg);
+    background-repeat: no-repeat;
+    background-size: cover contain;
+    background-position: 0 0, 100% 132px;
+
+    &__title {
+        font-size: 24px;
+        font-weight: 500;
+        text-align: center;
+        max-width: 943px;
+        margin: 0 auto 87px;
+
+        &_smal {
+            display: inline-block;
+            margin-bottom: 18px;
+            font-size: 20px;
+            font-weight: 400;
+            position: relative;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 24px;
+                height: 1px;
+                background-color: $yellow;
+                position: absolute;
+                top: 50%;
+                left: -30px;
+            }
+        }
+    }
+
+    &__demonstration {
+        max-width: 798px;
+        margin: auto;
+    }
+}
+
+.demonstration {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
+    grid-template-rows: 120px 1fr;
+
+    &-wrapper {
+        position: relative;
+    }
+
+    &__svg {
+        position: absolute;
+        top: 42%;
+        left: 49%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__item {
+        max-width: 144px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-self: center;
+
+        &:first-child {
+            justify-self: start;
+        }
+
+        &:last-child {
+            justify-self: end;
+        }
+
+        &:nth-child(odd) {
+            grid-row: 1/-1;
+        }
+
+        &:nth-child(even) {
+            grid-row: 2/3;
+        }
+    }
+}
