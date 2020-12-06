@@ -8,14 +8,19 @@
         max-width: 1060px;
         min-height: 60px;
         margin: auto;
-        padding: 0 76px;
         background-color: $yellow;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px 36px;
         border-radius: 0 0 35px 35px;
+
+        &_inner {
+            width: 100%;
+            min-height: 60px;
+            padding: 0 76px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px 36px;
+        }
 
         &_img {
             display: inline-block;

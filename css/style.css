@@ -219,21 +219,24 @@ a {
     max-width: 1060px;
     min-height: 60px;
     margin: auto;
-    padding: 0 76px;
     background-color: #FEC901;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    gap: 15px 36px;
     border-radius: 0 0 35px 35px; }
+    .services__about-us_inner {
+      width: 100%;
+      min-height: 60px;
+      padding: 0 76px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      gap: 15px 36px; }
     .services__about-us_img {
       display: inline-block;
       vertical-align: top; }
@@ -377,7 +380,8 @@ a {
   background-color: #161616;
   background-image: url(../img/Vector28.svg);
   background-repeat: no-repeat;
-  background-position: 100% 0; }
+  background-position: 100% 0;
+  overflow: hidden; }
   .all-services__title {
     font-size: 24px;
     font-weight: 500;
@@ -531,6 +535,139 @@ a {
     -webkit-filter: drop-shadow(12px 8px 15px rgba(0, 0, 0, 0.5));
             filter: drop-shadow(12px 8px 15px rgba(0, 0, 0, 0.5)); }
 
+.calculator {
+  padding: 71px 0 53px;
+  background-color: #FEC901;
+  color: black; }
+  .calculator__title {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 56px; }
+    .calculator__title_smal {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 20px;
+      font-weight: 400;
+      position: relative; }
+      .calculator__title_smal::before {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 1px;
+        background-color: #303030;
+        position: absolute;
+        top: 50%;
+        left: -30px; }
+
+.form {
+  max-width: 1120px;
+  min-height: 408px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px 22px; }
+  .form__input {
+    max-width: 360px;
+    height: 44px;
+    padding: 12px 24px;
+    background-color: #FEC901;
+    border: 1px solid black; }
+    .form__input::-webkit-input-placeholder {
+      color: #303030; }
+    .form__input:-ms-input-placeholder {
+      color: #303030; }
+    .form__input::-ms-input-placeholder {
+      color: #303030; }
+    .form__input::placeholder {
+      color: #303030; }
+    .form__input_name {
+      grid-column: 1/2;
+      grid-row: 1/2; }
+    .form__input_room {
+      grid-column: 1/2;
+      grid-row: 2/3; }
+    .form__input_phone {
+      grid-column: 1/2;
+      grid-row: 3/4; }
+    .form__input_district {
+      grid-column: 2/3;
+      grid-row: 1/2; }
+    .form__input_square {
+      grid-column: 2/3;
+      grid-row: 2/3; }
+    .form__input_clean {
+      grid-column: 3/4;
+      grid-row: 1/2; }
+    .form__input_place {
+      grid-column: 3/4;
+      grid-row: 2/3; }
+  .form__textarea {
+    grid-column: 1/3;
+    grid-row: 4/5;
+    max-width: 740px;
+    min-height: 140px;
+    padding: 12px 24px;
+    border: 1px solid black;
+    background-color: #FEC901;
+    resize: none;
+    margin: 15px 0; }
+    .form__textarea::-webkit-input-placeholder {
+      color: #303030; }
+    .form__textarea:-ms-input-placeholder {
+      color: #303030; }
+    .form__textarea::-ms-input-placeholder {
+      color: #303030; }
+    .form__textarea::placeholder {
+      color: #303030; }
+  .form__check {
+    grid-column: 2/4;
+    grid-row: 3/4; }
+    .form__check_description {
+      font-weight: 500; }
+    .form__check-wrapper {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 4px; }
+      .form__check-wrapper:last-child {
+        margin-right: 0; }
+    .form__check_label {
+      position: relative;
+      cursor: pointer; }
+      .form__check_label::before {
+        content: '';
+        display: inline-block;
+        vertical-align: top;
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+        border: 1px solid #303030;
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        z-index: 1; }
+  .form__checkbox {
+    opacity: 0;
+    position: relative;
+    z-index: 2;
+    cursor: pointer; }
+    .form__checkbox:checked + .form__check_label::before {
+      background-image: url(../img/check-sign.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
+  .form__submit {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    max-width: 192px;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding: 12px 60px;
+    background-color: #161616;
+    border: none;
+    cursor: pointer; }
+
 body {
   font-family: 'Jost', sans-serif;
   font-weight: 300;
@@ -649,7 +786,7 @@ body {
           width: 0px;
           background: rgba(255, 255, 255, 0); }
 
-  .services__about-us {
+  .services__about-us_inner {
     padding: 0 20px;
     -webkit-column-gap: 15px;
             column-gap: 15px; }
@@ -666,7 +803,42 @@ body {
     margin: 0 15px; }
   .all-services .slick-list {
     margin-left: -15px;
-    margin-right: -15px; } }
+    margin-right: -15px; }
+
+  .form {
+    grid-template-columns: 1fr 1fr; }
+    .form__input_name {
+      grid-column: 1/2;
+      grid-row: 1/2; }
+    .form__input_phone {
+      grid-column: 2/3;
+      grid-row: 1/2; }
+    .form__input_room {
+      grid-column: 1/2;
+      grid-row: 2/3; }
+    .form__input_square {
+      grid-column: 2/3;
+      grid-row: 2/3; }
+    .form__input_district {
+      grid-column: 1/2;
+      grid-row: 3/4; }
+    .form__input_clean {
+      grid-column: 2/3;
+      grid-row: 3/4; }
+    .form__input_place {
+      grid-column: 1/2;
+      grid-row: 4/5; }
+    .form__check {
+      grid-column: 1/-1;
+      grid-row: 5/6;
+      text-align: center; }
+    .form__textarea {
+      grid-column: 1/-1;
+      grid-row: 6/7; }
+    .form__submit {
+      grid-column: 2/3;
+      grid-row: 7/8;
+      justify-self: center; } }
 /* mobile screen (0 to 580)*/
 @media (max-width: 580px) {
   .slider {
@@ -687,6 +859,19 @@ body {
 
   .how-it-work {
     padding: 30px 0; }
+    .how-it-work__title {
+      font-size: 22px; }
+
+  .services__about-us_inner {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    margin: auto;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left; }
+  .services__about-us_img {
+    display: block; }
 
   .demonstration {
     display: grid;
@@ -720,4 +905,48 @@ body {
         background-position: right 3px center; }
       .screen__image-wrapper::after {
         bottom: 15%;
-        background-position: left 3px center; } }
+        background-position: left 3px center; }
+
+  .calculator__title {
+    font-size: 22px; }
+
+  .form {
+    grid-template-columns: 1fr;
+    justify-items: center; }
+    .form__input {
+      min-width: 80%; }
+      .form__input_name {
+        grid-column: auto;
+        grid-row: auto; }
+      .form__input_phone {
+        grid-column: auto;
+        grid-row: auto; }
+      .form__input_room {
+        grid-column: auto;
+        grid-row: auto; }
+      .form__input_square {
+        grid-column: auto;
+        grid-row: auto; }
+      .form__input_district {
+        grid-column: auto;
+        grid-row: auto; }
+      .form__input_clean {
+        grid-column: auto;
+        grid-row: auto; }
+      .form__input_place {
+        grid-column: auto;
+        grid-row: auto; }
+    .form__check {
+      grid-column: auto;
+      grid-row: auto;
+      text-align: left; }
+      .form__check-wrapper {
+        display: block; }
+    .form__textarea {
+      grid-column: auto;
+      grid-row: auto;
+      min-width: 80%; }
+    .form__submit {
+      grid-column: auto;
+      grid-row: auto;
+      justify-self: center; } }

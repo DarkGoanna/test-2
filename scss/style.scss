@@ -6,6 +6,7 @@
 @import 'how-it-work';
 @import 'all-services';
 @import 'screen';
+@import 'calculator';
 
 body {
     font-family: 'Jost', sans-serif;
@@ -184,8 +185,11 @@ body {
 
     .services {
         &__about-us {
-            padding: 0 20px;
-            column-gap: 15px;
+
+            &_inner {
+                padding: 0 20px;
+                column-gap: 15px;
+            }
         }
     }
 
@@ -212,6 +216,66 @@ body {
             margin-right: -15px;
         }
     }
+
+    .form {
+        grid-template-columns: 1fr 1fr;
+
+        &__input {
+
+            &_name {
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+
+            &_phone {
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+
+            &_room {
+                grid-column: 1/2;
+                grid-row: 2/3;
+            }
+
+            &_square {
+                grid-column: 2/3;
+                grid-row: 2/3;
+            }
+
+            &_district {
+                grid-column: 1/2;
+                grid-row: 3/4;
+            }
+
+            &_clean {
+                grid-column: 2/3;
+                grid-row: 3/4;
+            }
+
+            &_place {
+                grid-column: 1/2;
+                grid-row: 4/5;
+            }
+        }
+
+        &__check {
+            grid-column: 1/-1;
+            grid-row: 5/6;
+            text-align: center;
+        }
+
+        &__textarea {
+            grid-column: 1/-1;
+            grid-row: 6/7;
+        }
+
+        &__submit {
+            grid-column: 2/3;
+            grid-row: 7/8;
+            justify-self: center;
+        }
+
+    }
 }
 
 /* mobile screen (0 to 580)*/
@@ -237,6 +301,24 @@ body {
 
     .how-it-work {
         padding: 30px 0;
+
+        &__title {
+            font-size: 22px;
+        }
+    }
+
+    .services {
+        &__about-us {
+            &_inner {
+                width: min-content;
+                margin: auto;
+                justify-content: left;
+            }
+
+            &_img {
+                display: block;
+            }
+        }
     }
 
     .demonstration {
@@ -290,5 +372,78 @@ body {
                 background-position: left 3px center;
             }
         }
+    }
+
+    .calculator {
+        &__title {
+            font-size: 22px;
+        }
+    }
+
+    .form {
+        grid-template-columns: 1fr;
+        justify-items: center;
+
+        &__input {
+            min-width: 80%;
+
+            &_name {
+                grid-column: auto;
+                grid-row: auto;
+            }
+
+            &_phone {
+                grid-column: auto;
+                grid-row: auto;
+            }
+
+            &_room {
+                grid-column: auto;
+                grid-row: auto;
+            }
+
+            &_square {
+                grid-column: auto;
+                grid-row: auto;
+            }
+
+            &_district {
+                grid-column: auto;
+                grid-row: auto;
+            }
+
+            &_clean {
+                grid-column: auto;
+                grid-row: auto;
+            }
+
+            &_place {
+                grid-column: auto;
+                grid-row: auto;
+            }
+        }
+
+        &__check {
+            grid-column: auto;
+            grid-row: auto;
+            text-align: left;
+
+            &-wrapper {
+                display: block;
+            }
+        }
+
+        &__textarea {
+            grid-column: auto;
+            grid-row: auto;
+            min-width: 80%;
+        }
+
+        &__submit {
+            grid-column: auto;
+            grid-row: auto;
+            justify-self: center;
+        }
+
     }
 }
